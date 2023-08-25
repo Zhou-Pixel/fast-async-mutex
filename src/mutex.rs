@@ -11,6 +11,12 @@ pub struct Mutex<T: ?Sized> {
     inner: Inner<T>,
 }
 
+impl<T: Default> Default for Mutex<T> {
+    fn default() -> Self {
+        Mutex::new(Default::default())
+    }
+}
+
 impl<T> Mutex<T> {
     /// Create a new `Mutex`
     #[inline]

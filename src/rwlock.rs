@@ -25,6 +25,12 @@ impl<T> RwLock<T> {
     }
 }
 
+impl<T: Default> Default for RwLock<T> {
+    fn default() -> Self {
+        RwLock::new(Default::default())
+    }
+}
+
 impl<T: ?Sized> RwLock<T> {
     /// Acquires the mutex for are write.
     ///

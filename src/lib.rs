@@ -23,3 +23,6 @@ pub mod rwlock_ordered;
 
 pub(crate) mod inner;
 pub(crate) mod utils;
+
+pub use rwlock::RwLock;
+pub use mutex::Mutex;
